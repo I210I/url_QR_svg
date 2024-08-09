@@ -1,0 +1,35 @@
+﻿<Window x:Class="QR_URL_GENERATOR_SVG.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QR_URL_GENERATOR_SVG"
+        mc:Ignorable="d"
+        Title="URL_QR-SVG" Height="200px" Width="Auto" d:DesignHeight="82.92" d:DesignWidth="462.03">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tb_url" 
+                 Grid.Column="0"
+                 Margin="5" 
+                 VerticalAlignment="Center" 
+                 FontFamily="Consolas" 
+                 FontSize="20" 
+                 KeyDown="event_generar"
+                 />
+        <Button 
+            x:Name="btn_generar" 
+            Grid.Column="1" 
+            Margin="5" 
+            Content="Generar" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Click="event_generar" 
+            FontFamily="Consolas" 
+            FontSize="20">
+            
+        </Button>
+    </Grid>
+</Window>
