@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desencriptar con CryptoJS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <h1>Desencriptar una cadena encriptada con AES</h1>
+    
+    <!-- Elemento para mostrar la cadena desencriptada -->
+    <p id="decrypted-text"></p>
+    
+    <script>
+      var encryptedBase64 = "WeYES8MGs4yuRJp1Z6UBLcyjxRX803ZvTnQdvYjKHiduoe9BH+211EQKc+KppQiG"; // La cadena encriptada en Base64 desde C#
+          
+      // La clave de 128 bits (16 caracteres) utilizada para encriptar en C#
+      var key = CryptoJS.enc.Utf8.parse("mi_clavemi_clave");
+          
+      // Decodificar la cadena Base64
+      var encryptedBytes = CryptoJS.enc.Base64.parse(encryptedBase64);
+          
+      // Desencriptar usando AES en modo ECB (sin IV)
+      var decrypted = CryptoJS.AES.decrypt(
+          { ciphertext: encryptedBytes },
+          key,
+          {
+              mode: CryptoJS.mode.ECB,
+              padding: CryptoJS.pad.Pkcs7
+          }
+      );
+
+// Convertir el resultado a texto legible
+    var plaintext = decrypted.toString(CryptoJS.enc.Utf8);
+
+  console.log("Texto desencriptado: " + plaintext);
+        // Mostrar la cadena desencriptada en el párrafo
+        document.getElementById("decrypted-text").textContent = "Cadena desencriptada: " + plaintext;
+    </script>
+</body>
+</html>
