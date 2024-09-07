@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QR_URL_GENERATOR_SVG"
         mc:Ignorable="d"
-        Title="URL_QR-SVG" Height="200px" Width="Auto" d:DesignHeight="82.92" d:DesignWidth="462.03">
+        Title="URL_QR-SVG" Height="300" Width="Auto"  d:DesignWidth="462.03">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -22,8 +25,7 @@
                  Margin="5" 
                  VerticalAlignment="Center" 
                  FontFamily="Consolas" 
-                 FontSize="20" 
-                 KeyDown="event_generar"
+                 FontSize="20"
                  />
             <Button 
             x:Name="btn_generar" 
@@ -38,7 +40,50 @@
 
             </Button>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tb_urlbase" 
+          Grid.Column="0"
+          Margin="5" 
+          VerticalAlignment="Center" 
+          FontFamily="Consolas" 
+          FontSize="20" 
+          KeyDown="event_generar"
+          />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tb_vw" 
+                Grid.Column="0"
+                Margin="5" 
+                VerticalAlignment="Center" 
+                FontFamily="Consolas" 
+                FontSize="20" 
+                KeyDown="event_generar" GotFocus="limpiar"
+                />
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tb_dl" 
+                Grid.Column="0"
+                Margin="5" 
+                VerticalAlignment="Center" 
+                FontFamily="Consolas" 
+                FontSize="20" 
+                KeyDown="event_generar" GotFocus="limpiar"
+                />
+        </Grid>
+        <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
