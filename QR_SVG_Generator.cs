@@ -36,7 +36,7 @@ internal class QR_SVG_Generator
         using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
         {
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
-            SvgQRCode svgQRCode = new SvgQRCode(qrCodeData);
+            SvgQRCode svgQRCode = new (qrCodeData);
             string qrCodeAsSvg = svgQRCode.GetGraphic(20);
             // Guardar el SVG en un archivo
             File.WriteAllText(fullPath, qrCodeAsSvg);
